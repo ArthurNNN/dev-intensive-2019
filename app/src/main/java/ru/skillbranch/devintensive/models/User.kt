@@ -10,7 +10,7 @@ data class User(
     var avatar: String? = "",
     var rating: Int? = 0,
     var respect: Int? = 0,
-    var lastVisit: Date? = Date(),
+    var lastVisit: Date = Date(),
     var isOnline: Boolean = false
 ) {
     data class Builder(
@@ -20,7 +20,7 @@ data class User(
         var avatar: String?,
         var rating: Int? = 0,
         var respect: Int? = 0,
-        var lastVisit: Date? = Date(),
+        var lastVisit: Date = Date(),
         var isOnline: Boolean = false
     ) {
         fun firstName(firstName: String?) = apply { this.firstName = firstName }
@@ -28,7 +28,7 @@ data class User(
         fun avatar(avatar: String?) = apply { this.avatar = avatar }
         fun rating(rating: Int?) = apply { this.rating = rating }
         fun respect(respect: Int?) = apply { this.respect = respect }
-        fun lastVisit(lastVisit: Date?) = apply { this.lastVisit = lastVisit }
+        fun lastVisit(lastVisit: Date) = apply { this.lastVisit = lastVisit }
         fun isOnline(isOnline: Boolean) = apply { this.isOnline = isOnline }
         fun build() = User(
             id = getLastId().toString(),
